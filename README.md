@@ -64,7 +64,41 @@ Examples
 
 ![Unknown-3](https://user-images.githubusercontent.com/52020282/164911229-ac1b05d4-6b0e-4a53-abac-375e24dae720.png)![Unknown-4](https://user-images.githubusercontent.com/52020282/164911237-3a93e974-64e4-4249-bc31-f82d2b03f0db.png)
 
-This is how a dataset is created out of Google Earth Engine data catalogue
+
+## Data-Preparation
+
+As mentioned above we will be using keras segmentation models for semantic segmentation.
+Keras-segmentation has several prebuilt architecture which can be used for our project.
+We need to train these pre-built architecture on our datasets (Acquired during data acquisition)
+
+Before we can utilize these pre-built architectiure the data-set is undergoes required 
+preprocessing.
+
+
+The dataset created has two folders - Sentinel and masks. 
+
+![Review2 (5)](https://user-images.githubusercontent.com/52020282/166094535-0b9eaea6-8164-415d-8673-099f40007d54.png)
+
+
+**1** First we do conversion of our masked images from pixel values to labelled values.
+Our  masked images ranges from 0-255 pixel value, where **0** stands for non_urbanization **255** stand for urbanization.
+We convert these pixels values into labels. 
+
+**2** Then we crop our each imaage and corresponding masked images into multiple images
+which is compatible with our keras-segmentation models.  
+
+**3** Then we do pixel wise label wise summation .Here we decide whether to consider an image and its corresponding mask or not.
+If in the mask we have representation of urbanization label (**1** ) below a threshold (say 30 %) we disregard that image
+and corresponding label. 
+
+**4** During filteration we loose images so we augument the remaining images increase the filterd data (*4times) 
+
+**5** Lastly we split the dataset into train test and split 
+
+
+ 
+
+
 
 
 
