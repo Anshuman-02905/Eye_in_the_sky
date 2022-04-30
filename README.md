@@ -15,5 +15,5 @@ Our Project is divided into 3 Phase \
 Here are the links \
 [Data Aquistion](https://www.google.com) -Prototype Done ,improvements still in process\
 [Data Preparation](https://www.google.com) --Prototype Done ,improvements still in process\
-[Deep Learning](https://www.google.com) ---Still in process
+[Deep Learning](https://www.google.com) ---Still in process\
 [Report Generator](https://www.google.com) -- Next Phase
